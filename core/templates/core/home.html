@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogDelRestaurante</title>
+    <link rel="styleshet" href="{% static 'core/css/normalize.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin central-texto">Blog<span class="logo__bold">DelRestaurante</span> </h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="cursos.html" class="navegacion__enlace">Lista</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="header_texto">
+            <h2 class="no-margin">Blog Restuarantes</h2>
+            <p class="no-margin">Conoce más de los mejores rastaurantes</p>
+        </div>
+    </header>
+    <main class="contenedor">
+        <h3 class="centrar-texto">Lista de restaurantes</h3>
+
+        {% for restaurant in restaurants %}
+        <div class="curso">
+            <div class="curso__imagen">
+                <img src="{{restaurant.image.url}}" alt="imagen curso">
+            </div>
+            <div class="curso__informacion">
+                <h4 class="no-margin">{{restaurant.title}}</h4>
+                <h2 class="no-margin">{{restaurant.type_restaurant}}</h2>
+                <p class="curso__label">Dirección:
+                    <span class="curso__info">{{restaurant.address}}</span>
+                </p>
+                <p class="curso__label">Teléfono:
+                    <span class="curso__info">{{restaurant.phone}}</span>
+                </p>
+                <p class="curso__descripcion">{{project.description}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+
+ 
+    </main>
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin central-texto">Blog<span class="logo__bold">DelRestaurante</span> </h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="cursos.html" class="navegacion__enlace">Lista</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
